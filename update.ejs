@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   </head>
+
+<body>
+	
+
+<div class="container">
+	
+<nav aria-label="breadcrumb">
+	
+  <ol class="breadcrumb">
+
+	    <li class="breadcrumb-item"><a href="/add-user">DashBoard</a></li>
+	
+    <li class="breadcrumb-item" ><a href="/list">Student Registration Form</a></li>
+	
+    <li class="breadcrumb-item active">Update Student</li>
+	
+  </ol>
+
+	</nav>
+	
+</div>
+
+
+
+	<div class="container">
+	
+  <h2>Update Data:-</h2>
+	
+  <form  method="post">
+	
+    <input type="hidden" name="user_id" value="<%= user_id %>">
+	
+    <div class="form-group">
+
+	      <label for="fname">
+		<i class="fa fa-id-card-o" style="font-size:20px;color:dodgerblue"></i>
+		 Student First Name:</label>
+		
+      <input type="text" class="form-control" name="name" id="fname_id" placeholder="Enter First Name" value="<%= update_datafname %>">
+
+	    <div class="form-group">
+	
+      <label for="lname">
+		<i class="fa fa-envelope" style="font-size:20px;color:dodgerblue"></i>
+		 Student Last Name:</label>
+ 
+		     <input type="text" class="form-control" name="lname" id="lname_id" placeholder="Enter Last Name" value="<%= update_data.lname %>">
+
+    	    </div>
+
+	    <div class="form-group">
+	
+      	<label for="gender">
+			<i class="fa fa-desktop" style="font-size:20px;color:dodgerblue"></i>
+	  	Gender:</label>
+		
+     	<input type="radio" class="form-control" name="gender" id="gender_id"  value="<%= update_data.gender %>">Male
+     	<input type="radio" class="form-control" name="gender" id="gender_id"  value="<%= update_data.gender %>">Female
+	
+    </div>
+
+    	<div class="form-group">
+
+	      <label for="hobby">
+		<i class="fa fa-id-badge" style="font-size:20px;color:dodgerblue"></i>
+		 Hobby:</label>
+		
+      <input type="checkbox" class="form-control" id="hobby_id" name="hobby"  value="<%= update_data.hobby %>">Cricket
+      <input type="checkbox" class="form-control" id="hobby_id" name="hobby"  value="<%= update_data.hobby %>">Playing Games
+		</div>
+
+		<div class="form-group">
+	
+      <label for="address">
+		<i class="fa fa-envelope" style="font-size:20px;color:dodgerblue"></i>
+		 Address:</label>
+ 
+		     <input type="text" class="form-control" name="address" id="address_id" placeholder="Enter Address" value="<%= update_data.address %>">
+
+    	    </div>
+
+    <center>
+	
+    <button type="submit" class="btn btn-default" id="submit">Update</button>
+	    </center>
+ 
+	 </form>
+	
+</div>
+
+
+
+</body> 
+
+</html>

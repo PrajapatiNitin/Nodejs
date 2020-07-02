@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
+  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+</script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav aria-labitems="breadcrumb">
+
+    <ol class="breadcrumb">
+
+      <li class="breadcrumb-item">
+<a href="/">DashBoard</a></li>
+
+      <li class="breadcrumb-item active" >Student Registration Form</li>
+
+    </ol>
+
+    </nav>
+
+  </div>
+
+  <center>
+
+    <h3>Student Registration Form</h3>
+
+  <div class="container">
+
+  <table class="table table-bordered">
+
+    <thead>
+
+      <tr>
+
+      	<th>Student First Name</th>
+ 
+       <th>Student Last Name</th>
+
+        <th>Gender</th>
+
+        <th>Hobby</th>
+
+        <th>Address</th>
+
+        <th>Branch Name</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <% data.forEach(function(items, index) {%>
+
+        <tr>
+
+      	<td>
+<img src="user.png" width="70" height="70" class="img-thumbnail" >
+</td> 
+
+        <td><i class="fa fa-id-card-o" style="font-size:20px;color:dodgerblue">
+</i> <%= items.studentfistname %> 
+</td>
+        
+<td><i class="fa fa-envelope" style="font-size:20px;color:dodgerblue">
+</i>  <%= items.studentlastname %> 
+</td>
+
+        <td><i class="fa fa-desktop" style="font-size:20px;color:dodgerblue">
+</i> <%= items.gender %> 
+</td>
+
+        <td><i class="fa fa-desktop" style="font-size:20px;color:dodgerblue">
+</i> <%= items.hobby %> 
+</td>
+  
+      <td><i class="fa fa-id-badge" style="font-size:20px;color:dodgerblue">
+</i> <%= items.address %> 
+</td>
+
+      <td><i class="fa fa-desktop" style="font-size:20px;color:dodgerblue">
+</i> <%= items.branchname %> 
+</td>
+        <td><a href="/update/<%= items._id %>"><i class="fa fa-edit" style="font-size:20px;color:red">
+</i>
+      
+      </a>
+
+            <br>
+
+            <a href="/delete/<%= items._id %>"><i class="fa fa-trash-o" style="font-size:20px;color:red">
+</i>
+</a>
+<br>
+
+        </td>
+   
+   <% }); %>
+   
+   </tr> 
+  
+  </tbody>
+ 
+ </table>
+
+</div>
+
+<button type="button" class="btn btn-default"><a href="./add-user">Add User</a></button>
+
+</center>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html>
+
+
+  <head>
+ 
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="validation.css">
+
+  </head>
+
+  
+<body>
+
+    <script type="text/javascript">
+
+      $(document).ready(function() 
+	{
+
+             $('#submit').click(function(e)
+		 {
+
+         
+			    let studentfirstname = $('#fname_id').val();
+		
+          let studentlastname = $('#lname_id').val();
+		
+          let gender = $('#gender_id').val();
+
+		      let hobby = $('#hobby_id').val();
+
+		     let address = $('#address_id').val();
+
+         let branchname = $('#branch_id').val();
+
+
+          /*-----------------Regular Expression-------------------*/
+  
+		        let studentfirstname_regex = /^[a-zA-Z]*$/;
+	      
+          let studentlastname_regex = /^[a-zA-Z]+$/;
+	      
+          let gender_regex = /^[a-zA-Z]*$/;
+ 
+                        let hobby_reg = /^[a-zA-Z]+$/;
+ 
+                        let address_regex = /^[0-9a-zA-Z]+$/;
+
+                        let branchname_regex = /^[0-9a-zA-Z]+$/;
+
+
+ 
+               if (studentfistname.length == 0) 
+        {
+           
+           $('#user_name').text("* Please enter first name *");
+ 
+           $("#fname_id").focus();
+   
+        }
+   else if (!studentfirstname.match(studentfirstname_regex) || studentfirstname.length == 0) 
+        {
+           
+          $('#user_name').text("* Use alphabet only *");
+ 
+           $("#studentfirstname").focus();
+      
+        } 
+      else
+        {
+            
+	$('#user_name').hide();
+   
+       }
+
+         
+	 if (!studentlastname.match(studentlastname_regex) || studentlastname.length == 0)
+	 {
+            
+	$('#user_studentlastname').text("* Please enter a last name *");
+ 
+           $("#lname_id").focus();
+        
+	 } 
+	else 
+	{
+            
+	$('#user_studentlastname').hide();
+     
+	     }
+
+       
+	   if (!gender.match(gen_regex) || gender.length == 0) 
+	{
+           
+	 $('#user_gender').text("* *");
+ 
+           $('#gender_id').focus();
+   
+       } else {
+  
+          $('#user_gender').hide();
+   
+       }
+
+          if (!hobby.match(hobby_reg) || hobby.length == 0)
+	 {
+          
+	  $('#user_hobby').text("*  *");
+
+            $("#hobby_id").focus();
+      
+    } else {
+         
+	   $('#user_hobby').hide();
+ 
+         }
+
+         
+	 if (!address.match(address_regex) || address.length == 0) 
+	{
+            
+	$('#user_address').text("* For Address please use numbers and letters *");
+ 
+           $("#address_id").focus();
+ 
+           return false;
+  
+        } else
+          {
+  
+          $('#user_address').hide();
+ 
+         }
+    
+   if (!branchname.match(branch_regex) || branchname.length == 0) 
+  {
+            
+  $('#user_branchname').text("* For Address please use numbers and letters *");
+ 
+           $("#branch_id").focus();
+ 
+           return false;
+  
+        } else
+          {
+  
+          $('#user_branchname').hide();
+ 
+         }
+  
+
+	});
+
+      });
+
+    
+</script>
+    
+<div class="container">
+
+      <nav aria-label="breadcrumb">
+
+        <ol class="breadcrumb">
+
+          <li class="breadcrumb-item">
+	<a href="/">DashBoard</a></li>
+
+          <li class="breadcrumb-item">
+	<a href="/list">Student Registration Form</a></li>
+
+          <li class="breadcrumb-item active">Add student</li>
+
+        </ol>
+
+      </nav>
+    
+</div>
+
+
+    <div class="container">
+
+      <h2>Add student</h2>
+
+      <form method="post">
+
+        <div class="form-group">
+
+          <label for="name">
+	<i class="fa fa-id-card-o" style="font-size:20px;color:dodgerblue"></i>
+	 Student First Name:</label>
+          
+	    <input type="text" class="form-control" name="fname" id="fname_id" placeholder="Enter First Name">
+	    <span id="user_studentfirstname"></span>
+
+          <div class="form-group">
+  
+          <label for="studentlastname">
+	<i class="fa fa-envelope" style="font-size:20px;color:dodgerblue"></i>
+	 Student Last Name:</label>
+
+            <input type="text" class="form-control" name="lname" id="lname_id" placeholder="Enter Last Name">
+	    <span id="user_studentlastname"></span>
+ 
+         </div>
+ 
+         <div class="form-group">
+
+            <label for="gender">
+	    <i class="fa fa-key" style="font-size:20px;color:dodgerblue"></i>
+	 Gender:</label>
+
+            <input type="radio" class="form-control" name="gender" id="gender_id"value="male">Male
+            <input type="radio" class="form-control" name="gender" id="gender_id"value="female">Female
+	    <span id="user_gender"></span>
+ 
+         </div>
+ 
+         <div class="form-group">
+
+            <label for="hobby">
+	    <i class="fa fa-desktop" style="font-size:20px;color:dodgerblue"></i>
+	 Hobby:</label>
+
+            <input type="checkbox" class="form-control" id="hobby_id" name="hobby" value="Cricket">Cricket
+            <input type="checkbox" class="form-control" id="hobby_id" name="hobby" value="Playing games">Playing Games
+	    <span id="user_hobby"></span>
+
+          </div>
+
+          <div class="form-group">
+ 
+           <label for="address">
+	   <i class="fa fa-id-badge" style="font-size:20px;color:dodgerblue"></i>
+	 Address:</label>
+
+            <input type="text" class="form-control" id="address_id" name="address" placeholder="Enter Address">
+	    <span id="user_address"></span>
+
+          </div>
+
+          <div class="form-group">
+ 
+           <label for="branchname">
+     <i class="fa fa-id-badge" style="font-size:20px;color:dodgerblue"></i>
+   Branch Name:</label>
+
+            <input type="text" class="form-control" id="branch_id" name="branchname" placeholder="Enter branch name">
+      <span id="user_branchname"></span>
+
+          </div>
+
+
+          <center>
+ 
+           <button type="submit" class="btn btn-default" id="submit">Submit</button>&nbsp;&nbsp;&nbsp;
+
+            <button class="btn btn-default"><a href="./list">Back To Student Registration Form</a></button>
+ 
+         </center>
+
+      </form>
+
+    </div>
+
+  </body>
+
+
+</html>
